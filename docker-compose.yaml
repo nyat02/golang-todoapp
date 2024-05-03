@@ -1,0 +1,13 @@
+version: "3.0"
+
+services:
+  go:
+    image: golang:1.22
+    container_name: golang
+    # コンテナ内でbashを起動
+    # stdin_open: true
+    # コンテナを起動したままにする
+    tty: true
+    # ホストのsrcディレクトリをコンテナの/go/srcディレクトリにマウント
+    volumes:
+      - ./src:/go/src
